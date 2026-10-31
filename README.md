@@ -2,22 +2,24 @@
 
 **What if no customer complaint went unanswered?**
 
-FeedbackAI is an AI-powered customer complaint management platform developed as part of the **ThirdUni AI Program**. It helps businesses automate complaint processing, analyze customer sentiment, and deliver intelligent, context-aware responses using Artificial Intelligence, Retrieval-Augmented Generation (RAG), and workflow automation.
+FeedbackAI is an AI-powered customer complaint management platform developed as part of the **ThirdUni AI Program**. It helps businesses streamline complaint handling, analyze customer feedback, and generate intelligent, context-aware responses using Artificial Intelligence, Retrieval-Augmented Generation (RAG), and workflow automation.
 
-Ooredoo Algeria is used as an illustrative use case to demonstrate the platform's capabilities. FeedbackAI is an independent project and is not affiliated with or endorsed by Ooredoo Algeria.
+Ooredoo Algeria is used solely as an illustrative use case to demonstrate the platform's capabilities. FeedbackAI is an independent project and is not affiliated with, endorsed by, or officially connected to Ooredoo Algeria.
 
 ## Project Overview
 
-FeedbackAI streamlines the customer feedback lifecycle, from complaint submission to AI-generated responses and team monitoring.
+FeedbackAI streamlines the customer feedback lifecycle, from complaint submission and processing to automated responses and team monitoring.
 
 ### How It Works
 
-1. **Feedback Submission:** Customers submit complaints through the web application.
-2. **Data Storage:** Feedback is securely stored in Firebase Cloud Firestore.
-3. **AI Processing:** The backend uses AI and RAG to analyze complaints and generate context-aware responses.
-4. **Classification:** Feedback is categorized and analyzed to identify sentiment and priority.
-5. **Response Delivery:** Automated workflows handle email communication.
-6. **Dashboard Monitoring:** Administrators can monitor feedback, responses, and analysis through a real-time dashboard.
+1. **Feedback Submission:** Customers submit their feedback through the web application.
+2. **Data Storage:** Feedback is stored in Firebase Cloud Firestore.
+3. **Backend Processing:** The backend API handles feedback data and supports communication between the application and the automation workflow.
+4. **AI-Powered Response Generation:** An n8n workflow retrieves feedback details and uses a Groq-powered AI agent to generate personalized responses.
+5. **Knowledge Retrieval (RAG):** The AI agent searches a company-specific knowledge base through Pinecone, using Google Gemini embeddings to retrieve relevant information and generate context-aware responses.
+6. **Email Delivery:** The generated response is formatted and sent to the customer through Gmail.
+7. **Processing Tracking:** Processed feedback is recorded in Firestore, while the workflow updates the backend with the generated response and email status.
+8. **Dashboard Monitoring:** Administrators can monitor feedback and responses through the web application's dashboard.
 
 ## Explore the Project
 
@@ -25,27 +27,29 @@ The project is organized into three independent repositories:
 
 | Component | Description | Repository |
 |---|---|---|
-| Frontend | Web application, authentication, feedback submission, and admin dashboard. | [feedbackai-frontend](https://github.com/FeedbackAI-2026/feedbackai-frontend) |
-| Backend | AI processing, complaint analysis, and API services. | [feedbackai-backend](https://github.com/FeedbackAI-2026/feedbackai-backend) |
-| Email Workflow | Email automation and workflow integration. | [EmailWorkflow](https://github.com/FeedbackAI-2026/EmailWorkflow) |
+| **Frontend** | Web application, user authentication, feedback submission, and admin dashboard. | [feedbackai-frontend](https://github.com/FeedbackAI-2026/feedbackai-frontend) |
+| **Backend** | Backend API services and feedback processing. | [feedbackai-backend](https://github.com/FeedbackAI-2026/feedbackai-backend) |
+| **Email Workflow** | n8n automation workflow for AI-powered response generation, knowledge retrieval, and email delivery. | [EmailWorkflow](https://github.com/FeedbackAI-2026/EmailWorkflow) |
 
 ## Technology Stack
 
 - **Frontend:** Next.js, TypeScript, Tailwind CSS
-- **Backend:** Python and AI integration
-- **AI:** Large Language Models (LLMs), Retrieval-Augmented Generation (RAG)
+- **Backend:** Backend API and application services
 - **Database:** Firebase Cloud Firestore
 - **Authentication:** Firebase Authentication
-- **Automation:** n8n
-- **Email Integration:** Gmail API
+- **AI Model:** Groq — `openai/gpt-oss-120b`
+- **Retrieval-Augmented Generation (RAG):** Pinecone Vector Store
+- **Embeddings:** Google Gemini
+- **Workflow Automation:** n8n
+- **Email Integration:** Gmail through n8n
 
 ## Live Demo
 
-- **Main Platform:** https://feedbackaipro.vercel.app/
-- **Ooredoo Algeria Demo:** https://feedbackai-ooredoo.vercel.app/
+- **Main Platform:** [https://feedbackaipro.vercel.app/](https://feedbackaipro.vercel.app/)
+- **Ooredoo Algeria Demo:** [https://feedbackai-ooredoo.vercel.app/](https://feedbackai-ooredoo.vercel.app/)
 
 ## About
 
-FeedbackAI was developed as a collaborative project within the **ThirdUni AI Program**, exploring how AI can transform customer support by making complaint management more efficient, intelligent, and responsive.
+FeedbackAI was developed as a collaborative project within the **ThirdUni AI Program**, exploring how artificial intelligence can improve customer support by making complaint management more efficient, intelligent, and responsive.
 
-The platform is designed to serve businesses across different industries, with Ooredoo Algeria serving solely as a demonstration use case.
+The platform is designed to serve businesses across different industries. Ooredoo Algeria is used exclusively as a demonstration use case and does not represent an affiliation or endorsement.
